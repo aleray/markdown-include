@@ -72,7 +72,15 @@ class IncludePreprocessor(Preprocessor):
                         filename = os.path.normpath(os.path.join(self.base_path,filename))
                     try:
                         with open(filename, 'r') as r:
-                            text = r.readlines()
+                            text = r.read()
+
+                            try:
+                                unicode_content = text.decode("utf-8")
+                            except UnicodeDecodeError:
+                                unicode_content = text.decode("iso8559-1")
+
+                            text = unicode_content.split('\n')
+
                     except:
                         print('Warning: could not find file {}. Ignoring include statement.'.format(filename))
                         lines[loc] = INC_SYNTAX.sub('',line)
