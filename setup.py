@@ -5,7 +5,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the relevant file
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
@@ -16,7 +16,7 @@ setup(
   long_description = long_description,
   author = 'Chris MacMackin',
   author_email = 'cmacmackin@gmail.com',
-  url = 'https://github.com/cmacmackin/markdown-include/', 
+  url = 'https://github.com/cmacmackin/markdown-include/',
   download_url = 'https://github.com/cmacmackin/markdown-include/tarball/v0.4.2',
   keywords = ['Markdown', 'typesetting', 'include', 'plugin', 'extension'],
   classifiers=[
